@@ -1,0 +1,60 @@
+{
+  "usuarios": [
+    {
+      "id": 0,
+      "email": "lalal@g.com"
+    },
+    {
+      "nome": "ada",
+      "email": "teste@gmail.com",
+      "senha": "kajsakjdjahda",
+      "id": 1
+    },
+    {
+      "nome": "ada",
+      "email": "teste@gmail.com",
+      "senha": "kajsakjdjahda",
+      "id": 2
+    },
+    {
+      "nome": "afsfsfsf",
+      "email": "sefgsfse@gmail.com",
+      "senha": "kadhadjahdadh",
+      "id": 3
+    },
+    {
+      "nome": "",
+      "email": "",
+      "senha": "",
+      "id": 4
+    },
+    {
+      "nome": "",
+      "email": "",
+      "senha": "",
+      "id": 5
+    }
+  ],
+  "projetos": [
+    {
+      "projeto": "estudos",
+      "id": 1
+    }
+  ],
+  "tarefas": [
+    {
+      "titulo": "testando alteração",
+      "descricao": "testando para alterar",
+      "status": "Em andamento",
+      "projeto": "Diversão",
+      "id": 1
+    },
+    {
+      "titulo": "caralhoo",
+      "descricao": "porraaaaaaaaa",
+      "status": "Em andamento",
+      "projeto": "Outros",
+      "id": 2
+    }
+  ]
+}
