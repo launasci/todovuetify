@@ -43,14 +43,7 @@
   ],
   "tarefas": [
     {
-      "titulo": "testando alteração",
-      "descricao": "testando para alterar",
-      "status": "Em andamento",
-      "projeto": "Diversão",
-      "id": 1
-    },
-    {
-      "titulo": "caralhoo",
+      "titulo": "bom dia",
       "descricao": "porraaaaaaaaa",
       "status": "Em andamento",
       "projeto": "Outros",

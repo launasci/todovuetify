@@ -4,6 +4,7 @@
     <listaTarefasCom
       :tarefas="tarefas"
       @selecionarTarefaEdicao="selecionarTarefaEdicao"
+      @excluirTarefa="excluirTarefa"
     />
   </div>
 </template>
@@ -39,14 +40,24 @@ export default {
   },
 
   methods: {
+    listaTarefas() {
+      apiMock.pegarTarefas((data) => {
+        this.tarefas = data;
+      });
+    },
+
     selecionarTarefaEdicao(tarefaId) {
       this.$router.push(`/editarProjetosTarefas/${tarefaId}`);
     },
+
+    excluirTarefa(tarefaId) {
+      apiMock.excluirTarefa(tarefaId, () => {
+        this.listaTarefas();
+      });
+    },
   },
   created() {
-    apiMock.pegarTarefas((data) => {
-      this.tarefas = data;
-    });
+    this.listaTarefas();
 
     apiMock.pegarProjetos((data) => {
       this.porcentagem = data;

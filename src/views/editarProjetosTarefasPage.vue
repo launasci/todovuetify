@@ -82,10 +82,10 @@ export default {
     },
 
     salvarTarefaEditada(tarefa) {
-      console.log(tarefa);
       apiMock.salvarTarefaEditada(tarefa, () => {
         this.listaTarefas();
       });
+      this.$router.push("/exibirProjetosTarefas");
     },
   },
 
