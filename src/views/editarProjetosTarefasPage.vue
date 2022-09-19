@@ -44,6 +44,7 @@ export default {
       apiMock.criarTarefa(novaTarefa, () => {
         this.listaTarefas();
       });
+      this.$router.push("/exibirProjetosTarefas");
     },
 
     listaTarefas() {

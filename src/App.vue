@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <div>
+    <div class="d-flex flex-column" height="100">
       <v-toolbar class="nav-bar" light prominent>
         <v-app-bar-nav-icon></v-app-bar-nav-icon>
 
@@ -14,6 +14,11 @@
     <v-main>
       <router-view />
     </v-main>
+    <v-footer padless>
+      <v-col class="text-center red lighten-3" cols="12">
+        {{ new Date().getFullYear() }} — <strong>Vuetify</strong>
+      </v-col>
+    </v-footer>
   </v-app>
 </template>
 
@@ -22,20 +27,9 @@ export default {
   name: "App",
 
   data: () => {
-    return {
-      backgroundImg:
-        "https://media.istockphoto.com/vectors/opened-personal-organizer-with-a-to-do-list-top-view-of-women-hands-vector-id1168738399?k=20&m=1168738399&s=612x612&w=0&h=adldxggj-8azZlhHE-COXj111heThIsmZI0wI7fxdH4=",
-    };
+    return {};
   },
 };
 </script>
 
-<style scoped>
-.nav-bar {
-  height: 25vh !important;
-  background-image: url();
-}
-.img {
-  height: 24vh;
-}
-</style>
+<style scoped></style>

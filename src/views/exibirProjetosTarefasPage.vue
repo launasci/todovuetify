@@ -5,6 +5,7 @@
       :tarefas="tarefas"
       @selecionarTarefaEdicao="selecionarTarefaEdicao"
       @excluirTarefa="excluirTarefa"
+      @adicionarNovaTarefa="adicionarNovaTarefa"
     />
   </div>
 </template>
@@ -48,6 +49,10 @@ export default {
 
     selecionarTarefaEdicao(tarefaId) {
       this.$router.push(`/editarProjetosTarefas/${tarefaId}`);
+    },
+
+    adicionarNovaTarefa(novaTarefa) {
+      this.$router.push("/adicionarProjetosTarefas", novaTarefa);
     },
 
     excluirTarefa(tarefaId) {
