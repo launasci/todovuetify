@@ -1,29 +1,55 @@
 <template>
-  <div>
-    <v-text-field
-      color="success"
-      loading
-      v-model="pesquisa"
-      placeholder="Pesquisar"
-    ></v-text-field>
-    <v-col class="d-flex" cols="6" offset-md="6">
-      <v-expansion-panels class="mb-6">
-        <v-expansion-panel v-for="tarefa in tarefasFiltradas" :key="tarefa.id">
-          <v-expansion-panel-header expand-icon="mdi-menu-down">
-            {{ tarefa.titulo }}
-            <v-expansion-panel-content
-              >{{ String(tarefa.status) }}
-            </v-expansion-panel-content>
-          </v-expansion-panel-header>
-          <v-expansion-panel-content
-            >{{ String(tarefa.projeto) }}
-          </v-expansion-panel-content>
-          <v-expansion-panel-content
-            >{{ tarefa.descricao }}
-          </v-expansion-panel-content>
-          <v-expansion-panel-content>
+  <v-container class="d-flex flex-row mt-8 full">
+    <div class="d-flex flex-column width">
+      <v-col cols="11">
+        <v-text-field
+          color="red lighten-3"
+          loading
+          v-model="pesquisa"
+          placeholder="Encontre uma tarefa"
+        ></v-text-field
+        ><porcentagemProjetosTarefasCom :porcentagem="porcentagem" />
+        <v-card>
+          <v-card-text> Adicione uma nova tarefa! </v-card-text>
+          <v-btn
+            class="mt-4 mr-4"
+            @click="adicionarNovaTarefa"
+            dark
+            small
+            color="pink"
+          >
+            adicionar
+          </v-btn>
+        </v-card>
+      </v-col>
+    </div>
+
+    <div class="d-flex flex-column width mt-13">
+      <v-col cols="12">
+        <v-row class="linha">
+          <v-card
+            width="350"
+            max-width="450"
+            class="mr-4 mb-4"
+            v-for="tarefa in tarefasFiltradas"
+            :key="tarefa.id"
+          >
+            <v-card-title
+              >{{ tarefa.titulo }}
+              <v-spacer> </v-spacer>
+              <span class="projeto rounded-l-xl font-weight-light text-body-2"
+                >{{ String(tarefa.projeto) }}
+              </span>
+            </v-card-title>
+            <v-card-text class="mt-n3 rounded-l-xl status yellow darken-2">
+              <span>{{ String(tarefa.status) }} </span>
+            </v-card-text>
+
+            <v-card-text class="font-weight-medium text-md-body-1">
+              {{ tarefa.descricao }}
+            </v-card-text>
             <v-btn
-              class="mt-4 mr-4"
+              class="mx-3 my-4"
               @click="selecionarTarefaEdicao(tarefa.id)"
               dark
               small
@@ -32,7 +58,7 @@
               editar
             </v-btn>
             <v-btn
-              class="mt-4 mr-4"
+              class="mx-3 my-4"
               @click="excluirTarefa(tarefa.id)"
               dark
               small
@@ -40,30 +66,34 @@
             >
               excluir
             </v-btn>
-
-            <v-btn
-              class="mt-4 mr-4"
-              @click="adicionarNovaTarefa"
-              dark
-              small
-              color="pink"
-            >
-              adicionar</v-btn
-            >
-          </v-expansion-panel-content>
-        </v-expansion-panel>
-      </v-expansion-panels>
-    </v-col>
-  </div>
+          </v-card>
+        </v-row>
+      </v-col>
+    </div>
+  </v-container>
 </template>
 
 <script>
+import apiMock from "@/apiMock.js";
+import porcentagemProjetosTarefasCom from "@/components/porcentagemProjetosTarefasCom.vue";
 export default {
+  components: {
+    porcentagemProjetosTarefasCom,
+  },
   props: {
     tarefas: Array,
   },
   data: () => {
-    return { pesquisa: "" };
+    return {
+      pesquisa: "",
+      porcentagem: {
+        Estudos: 0,
+        Saúde: 0,
+        Diversão: 0,
+        Financeiro: 0,
+        Outros: 0,
+      },
+    };
   },
 
   methods: {
@@ -87,5 +117,30 @@ export default {
       });
     },
   },
+
+  created() {
+    apiMock.pegarProjetos((data) => {
+      this.porcentagem = data;
+    });
+  },
 };
 </script>
+
+<style scoped>
+.full {
+  width: 100vw;
+}
+.width {
+  width: 50vw;
+}
+.projeto {
+  width: 25% !important;
+  text-align: center !important;
+  background-color: #ef9a9a;
+}
+.status {
+  width: 37% !important;
+  height: 10% !important;
+  margin-left: 59% !important;
+}
+</style>

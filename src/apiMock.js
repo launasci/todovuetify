@@ -57,6 +57,30 @@ export default {
     });
   },
 
+  pegarStatus: (callback) => {
+    axios.get("http://localhost:3000/tarefas/").then((response) => {
+      let porcentagemStatus = response.data.reduce(
+        (anterior, atual) => ({
+          ...anterior,
+          [atual.status]: anterior[atual.status]
+            ? anterior[atual.status] + 1
+            : 1,
+        }),
+        {}
+      );
+
+      porcentagemStatus = Object.entries(porcentagemStatus).reduce(
+        (anterior, atual) => ({
+          ...anterior,
+          [atual[0]]: (atual[1] * 100) / response.data.length,
+        }),
+        {}
+      );
+
+      callback(porcentagemStatus);
+    });
+  },
+
   pegarTarefa: (tarefaId, callback) => {
     axios.get(`http://localhost:3000/tarefas/${tarefaId}`).then((response) => {
       callback(response.data);

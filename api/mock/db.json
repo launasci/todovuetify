@@ -46,7 +46,7 @@
       "titulo": "testando rota",
       "descricao": "testando rota",
       "status": "Concluida",
-      "projeto": "Saúde",
+      "projeto": "Diversão",
       "id": 4
     },
     {
@@ -55,6 +55,55 @@
       "status": "Concluida",
       "projeto": "Estudos",
       "id": 5
+    },
+    {
+      "titulo": "testando lista de tarefas",
+      "descricao": "testando como fica a visualização da lista de tarefas",
+      "status": "Em andamento",
+      "projeto": "Estudos",
+      "id": 6
+    },
+    {
+      "titulo": "bom dia",
+      "descricao": "dwdwdwdwdw",
+      "status": "Em andamento",
+      "projeto": "Financeiro",
+      "id": 7
+    },
+    {
+      "titulo": "wewewewe",
+      "descricao": "wewewewewe",
+      "status": "Concluida",
+      "projeto": "Diversão",
+      "id": 8
+    },
+    {
+      "titulo": "zczdadadad",
+      "descricao": "adadadadfafaf",
+      "status": "Em andamento",
+      "projeto": "Outros",
+      "id": 9
+    },
+    {
+      "titulo": "teste teste",
+      "descricao": "bnladbaikqmdwnfevhoiplçq,wd",
+      "status": "Em andamento",
+      "projeto": "Financeiro",
+      "id": 10
+    },
+    {
+      "titulo": "bom dia",
+      "descricao": "lkalakdhsgofjklafa",
+      "status": "Concluida",
+      "projeto": "Saúde",
+      "id": 11
+    },
+    {
+      "titulo": "testando exibição ",
+      "descricao": "lalalalalalallallaa",
+      "status": "Em andamento",
+      "projeto": "Estudos",
+      "id": 12
     }
   ]
 }

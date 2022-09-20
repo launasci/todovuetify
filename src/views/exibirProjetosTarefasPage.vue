@@ -13,11 +13,10 @@
 <script>
 import apiMock from "@/apiMock.js";
 import listaTarefasCom from "@/components/listaTarefasCom.vue";
-import progressoProjetosCom from "@/components/progressoProjetosCom.vue";
+
 export default {
   components: {
     listaTarefasCom,
-    progressoProjetosCom,
   },
 
   data: () => {
@@ -30,13 +29,6 @@ export default {
       id: 0,
       botao: "",
       tituloCard: "",
-      porcentagem: {
-        Estudos: 0,
-        Saúde: 0,
-        Diversão: 0,
-        Financeiro: 0,
-        Outros: 0,
-      },
     };
   },
 
@@ -63,10 +55,6 @@ export default {
   },
   created() {
     this.listaTarefas();
-
-    apiMock.pegarProjetos((data) => {
-      this.porcentagem = data;
-    });
   },
 };
 </script>
