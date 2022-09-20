@@ -46,7 +46,7 @@
       "titulo": "testando rota",
       "descricao": "testando rota",
       "status": "Concluida",
-      "projeto": "Diversão",
+      "projeto": "Outros",
       "id": 4
     },
     {
@@ -55,20 +55,6 @@
       "status": "Concluida",
       "projeto": "Estudos",
       "id": 5
-    },
-    {
-      "titulo": "testando lista de tarefas",
-      "descricao": "testando como fica a visualização da lista de tarefas",
-      "status": "Em andamento",
-      "projeto": "Estudos",
-      "id": 6
-    },
-    {
-      "titulo": "bom dia",
-      "descricao": "dwdwdwdwdw",
-      "status": "Em andamento",
-      "projeto": "Financeiro",
-      "id": 7
     },
     {
       "titulo": "wewewewe",

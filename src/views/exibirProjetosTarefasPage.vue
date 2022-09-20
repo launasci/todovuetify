@@ -1,6 +1,5 @@
 <template>
   <div>
-    <progressoProjetosCom :porcentagem="porcentagem" />
     <listaTarefasCom
       :tarefas="tarefas"
       @selecionarTarefaEdicao="selecionarTarefaEdicao"

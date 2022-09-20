@@ -1,35 +1,41 @@
 <template>
-  <v-container class="d-flex flex-row mt-8 full">
-    <div class="d-flex flex-column width">
-      <v-col cols="11">
+  <v-container class="d-flex flex-row mt-5 full">
+    <div class="d-flex flex-column width pesquisar">
+      <v-col cols="11" offset="1">
         <v-text-field
           color="red lighten-3"
           loading
-          v-model="pesquisa"
+          v-mo1el="pesquisa"
           placeholder="Encontre uma tarefa"
         ></v-text-field
         ><porcentagemProjetosTarefasCom :porcentagem="porcentagem" />
-        <v-card>
-          <v-card-text> Adicione uma nova tarefa! </v-card-text>
-          <v-btn
-            class="mt-4 mr-4"
-            @click="adicionarNovaTarefa"
-            dark
-            small
-            color="pink"
-          >
-            adicionar
-          </v-btn>
-        </v-card>
+
+        <v-btn
+          class="mt-4 mr-4"
+          @click="adicionarNovaTarefa"
+          dark
+          small
+          width="783"
+          height="40"
+          color="pink"
+        >
+          adicionar nova tarefa
+        </v-btn>
+
+        <v-img
+          class="ml-16 mt-16"
+          height="700"
+          width="700"
+          :src="require('../assets/To do list-amico.png')"
+        ></v-img>
       </v-col>
     </div>
 
     <div class="d-flex flex-column width mt-13">
-      <v-col cols="12">
+      <v-col cols="12" offset="1">
         <v-row class="linha">
           <v-card
             width="350"
-            max-width="450"
             class="mr-4 mb-4"
             v-for="tarefa in tarefasFiltradas"
             :key="tarefa.id"
@@ -49,7 +55,7 @@
               {{ tarefa.descricao }}
             </v-card-text>
             <v-btn
-              class="mx-3 my-4"
+              class="mx-3 mt-4"
               @click="selecionarTarefaEdicao(tarefa.id)"
               dark
               small
@@ -58,7 +64,7 @@
               editar
             </v-btn>
             <v-btn
-              class="mx-3 my-4"
+              class="mx-3 mt-4"
               @click="excluirTarefa(tarefa.id)"
               dark
               small
