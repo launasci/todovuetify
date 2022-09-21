@@ -21,7 +21,6 @@
         >
           adicionar nova tarefa
         </v-btn>
-
         <v-img
           class="ml-16 mt-16"
           height="700"
@@ -50,7 +49,6 @@
             <v-card-text class="mt-n3 rounded-l-xl status yellow darken-2">
               <span>{{ String(tarefa.status) }} </span>
             </v-card-text>
-
             <v-card-text class="font-weight-medium text-md-body-1">
               {{ tarefa.descricao }}
             </v-card-text>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="d-flex">
+    <div class="d-flex mt-10">
       <v-col cols="5" offset-md="1">
         <v-img
           height="735"

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-col cols="6" offset-md="3" class="mt-10">
+    <v-col cols="4" offset="4" class="form d-flex">
       <v-card>
         <v-card-title>
           <span class="text-h6">{{ tituloCard }}</span>
@@ -40,11 +40,10 @@
                   @input="(event) => projetoChange(event)"
                 ></v-autocomplete>
               </v-col>
-              <v-col cols="8">
+              <v-col cols="6 mt-8">
                 <v-textarea
-                  rows="2"
-                  class="text-h7"
-                  height="100%"
+                  rows="1"
+                  class="text-h9"
                   name="descricao"
                   :value="descricao"
                   @input="(event) => descricaoChange(event)"
@@ -52,15 +51,7 @@
                 ></v-textarea>
               </v-col>
             </v-row>
-            <v-btn
-              @click="salvarTarefa"
-              color="pink"
-              dark
-              cent
-              absolute
-              bottom
-              right
-            >
+            <v-btn @click="salvarTarefa" color="pink" dark bottom class="mt-10">
               {{ botao }}
             </v-btn>
           </v-container>
@@ -121,3 +112,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.form {
+  margin-top: 8% !important;
+}
+</style>

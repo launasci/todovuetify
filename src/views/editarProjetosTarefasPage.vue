@@ -31,7 +31,7 @@ export default {
       tarefas: [],
       tituloCard: "Cadastre uma nova tarefa",
       id: 0,
-      status: "",
+      status: "Pendente",
       projeto: "",
       titulo: "",
       descricao: "",
